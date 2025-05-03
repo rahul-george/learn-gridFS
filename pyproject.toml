@@ -1,0 +1,18 @@
+[project]
+name = "learn-gridfs"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Rahul T Gerorge",email = "34202955+rahul-george@users.noreply.github.com"}
+]
+license = {text = "LGPL"}
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pymongo (>=4.12.1,<5.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

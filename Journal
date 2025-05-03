@@ -1,0 +1,19 @@
+Since I did not want to create another python installation and install all the python modules on my PC. 
+I spent the first 1 hour figuring how to connect mongoDB to my github codespaces. 
+
+Tried to use atlas but there is issues with the IP. Abandoned it. 
+Came across this stack overflow post which helped. https://stackoverflow.com/questions/70296667/how-do-i-connect-to-mongodb-running-in-github-codespaces-using-mongodb-compass
+
+Used ngrok to tunnel it. This was also good learning. Going forward I can use this method on other projects that need a database.  
+
+Learnings: 
+1. GridFS class to handle simple objects. 
+2. GridFS takes a collection name then instead of fs.files and fs.chunks it will take that name. 
+3. I can pass additional parameters to gridFS and it will accept it. These are searchable like a normal mongoDB collection. 
+4. GridFSBucket provides additional upload from stream and download to stream methods. 
+5. GridFSBucket comes with streamability. 
+6. GridFS has a get_version that returns a specific version using the -1 numbering, it filters the files based on the name and then returns the nth from the last version. 
+7. Using gridFS as a file storage is an accepted solution when you application is very small and you have low to medium traffic. 
+    Why? 
+    1. Chunks the files creating more overhead and slower performance. 
+    2. Chunking makes serving static files inefficient. 
